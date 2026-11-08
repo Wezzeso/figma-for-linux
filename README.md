@@ -1,3 +1,5 @@
+![](docs/images/readme-cover.png)
+
 # Figma for Linux
 
 A packaged version of my working Figma desktop setup on Linux: a dedicated Firefox window with a Figma-style tab strip, its own application icon, an isolated profile, and the cursor and input fixes I use daily.
