@@ -1,0 +1,12 @@
+/build/
+/dist/
+__pycache__/
+*.pyc
+*.so
+*.log
+/profile/
+cookies.sqlite*
+places.sqlite*
+key4.db
+logins.json
+sessionstore*

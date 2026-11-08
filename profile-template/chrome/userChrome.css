@@ -1,0 +1,165 @@
+/* Figma-style file tabs, scoped to this app's independent Firefox profile. */
+:root {
+  --figma-strip: #1e1e1e;
+  --figma-active: #2c2c2c;
+  --figma-text: #e6e6e6;
+  --tab-min-height: 36px !important;
+  --tab-max-width: 220px !important;
+  --tab-min-width: 100px !important;
+  --tab-margin-block: 0px !important;
+  --tab-border-radius: 0px !important;
+  --tab-selected-bgcolor: var(--figma-active) !important;
+  --tab-selected-textcolor: var(--figma-text) !important;
+  --toolbar-bgcolor: var(--figma-strip) !important;
+  --toolbar-color: var(--figma-text) !important;
+  --lwt-accent-color: var(--figma-strip) !important;
+  --lwt-text-color: var(--figma-text) !important;
+}
+#navigator-toolbox {
+  background: var(--figma-strip) !important;
+  color: var(--figma-text) !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+#toolbar-menubar, #nav-bar, #PersonalToolbar,
+#sidebar-main, #sidebar-box, #sidebar-splitter,
+#TabsToolbar .titlebar-spacer,
+#TabsToolbar-customization-target > :not(#tabbrowser-tabs):not(#alltabs-button):not(toolbarspring),
+#tabbrowser-arrowscrollbox-periphery,
+#vertical-tabs-newtab-button,
+.private-browsing-indicator-with-label, .private-browsing-indicator-button,
+#TabsToolbar .content-analysis-indicator,
+#statuspanel {
+  display: none !important;
+}
+#TabsToolbar {
+  height: 36px !important;
+  min-height: 36px !important;
+  padding: 0 !important;
+  background: var(--figma-strip) !important;
+  color: var(--figma-text) !important;
+  border-bottom: 1px solid #383838 !important;
+  -moz-window-dragging: drag !important;
+}
+#TabsToolbar::before {
+  content: "";
+  display: block;
+  flex: 0 0 40px;
+  height: 35px;
+  background: url("figma.svg") center / 12px 18px no-repeat;
+  border-inline-end: 1px solid #383838;
+  -moz-window-dragging: drag;
+}
+#TabsToolbar .toolbar-items,
+#TabsToolbar-customization-target,
+#tabbrowser-tabs,
+#tabbrowser-arrowscrollbox {
+  min-width: 0 !important;
+  min-height: 35px !important;
+  padding-block: 0 !important;
+  align-items: stretch !important;
+}
+#tabbrowser-tabs { padding: 0 !important; border: 0 !important; }
+#TabsToolbar-customization-target > toolbarspring {
+  min-width: 40px !important;
+  -moz-window-dragging: drag !important;
+}
+.tabbrowser-tab {
+  padding: 0 !important;
+  height: 35px !important;
+  -moz-window-dragging: no-drag !important;
+}
+.tabbrowser-tab:not([pinned])[fadein] {
+  min-width: 100px !important;
+  max-width: 220px !important;
+}
+.tab-stack { margin: 0 !important; }
+.tab-background {
+  margin: 0 !important;
+  border: 0 !important;
+  border-inline-end: 1px solid #383838 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+.tabbrowser-tab:hover .tab-background { background: #272727 !important; }
+.tabbrowser-tab:is([selected], [multiselected]) .tab-background {
+  background: var(--figma-active) !important;
+  box-shadow: inset 0 -2px #0d99ff !important;
+}
+.tab-content {
+  padding-inline: 12px 8px !important;
+  color: #a6a6a6 !important;
+  -moz-window-dragging: no-drag !important;
+}
+.tabbrowser-tab:is([selected], :hover) .tab-content { color: var(--figma-text) !important; }
+.tab-label {
+  font-family: Inter, "Noto Sans", sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+}
+.tabbrowser-tab[selected] .tab-label { font-weight: 500 !important; }
+.tab-secondary-label { display: none !important; }
+.tab-icon-image { width: 14px !important; height: 14px !important; }
+.tabbrowser-tab:not([pinned]) .tab-close-button {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 0;
+  width: 24px !important;
+  height: 24px !important;
+  padding: 6px !important;
+  margin-inline-start: 6px !important;
+  border-radius: 4px !important;
+  -moz-window-dragging: no-drag !important;
+}
+.tabbrowser-tab:is([selected], :hover, :focus-within) .tab-close-button { opacity: 1; }
+.tab-close-button:hover { background-color: #444444 !important; }
+#alltabs-button {
+  display: flex !important;
+  width: 36px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  -moz-window-dragging: no-drag !important;
+}
+#alltabs-button > .toolbarbutton-icon {
+  width: 28px !important;
+  height: 28px !important;
+  padding: 6px !important;
+  border-radius: 4px !important;
+}
+.titlebar-buttonbox-container {
+  margin: 0 !important;
+  padding: 0 !important;
+  align-self: stretch !important;
+}
+.titlebar-buttonbox { gap: 0 !important; margin: 0 !important; }
+.titlebar-button {
+  appearance: none !important;
+  width: 44px !important;
+  min-width: 44px !important;
+  height: 35px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  -moz-window-dragging: no-drag !important;
+}
+.titlebar-button > .toolbarbutton-icon {
+  width: 16px !important;
+  height: 16px !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  background-color: transparent !important;
+  background-size: 16px 16px !important;
+  -moz-context-properties: stroke !important;
+  stroke: var(--figma-text) !important;
+}
+.titlebar-min > .toolbarbutton-icon { background-image: url("minimize.svg?v=2") !important; }
+.titlebar-max > .toolbarbutton-icon { background-image: url("maximize.svg?v=2") !important; }
+.titlebar-restore > .toolbarbutton-icon { background-image: url("restore.svg?v=2") !important; }
+.titlebar-close > .toolbarbutton-icon { background-image: url("close.svg?v=2") !important; }
+.titlebar-button:hover { background: #383838 !important; }
+.titlebar-button:active { background: #484848 !important; }
+.titlebar-close:hover { background: #e81123 !important; }
+.titlebar-close:active { background: #bf0f1d !important; }
